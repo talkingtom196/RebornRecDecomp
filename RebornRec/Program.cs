@@ -1,14 +1,12 @@
-using System.Net;
+﻿using System.Net;
 
 namespace RebornRec
 {
     internal class Start
     {
         static void Main(string[] args)
-{
-    try
-    {
-        Setup.setup();
+        {
+            Setup.setup();
         Tutorial:
             if (Setup.firsttime == true)
             {
@@ -59,16 +57,16 @@ namespace RebornRec
             }
 
         Start:
-            Console.Title = "Start OliveNet Private Testing - Main Menu";
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Title = "RebornRec - Main Menu";
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
-            Console.WriteLine($"OliveNet - Old RecRoom Server Software. (Version: {server_configs.build_version} {server_configs.build_version})");
+            Console.WriteLine($"RebornRec - Old RecRoom Server Software. (Version: {server_configs.build_version} {server_configs.build_version})");
 #if server_info
-            Console.WriteLine("GitHub Repository and Wiki: https://talkingtom196.buzz");
+            Console.WriteLine("GitHub Repository and Wiki: https://github.com/aqquad/RebornRec");
             Console.WriteLine("Discord Server: https://discord.gg/yWBNpcAQTf" + Environment.NewLine);
 #else
-            Console.WriteLine("GitHub server Repository: https://talkingtom196.buzz");
-            Console.WriteLine("GitHub data Repository and Wiki: https://talkingtom196.buzz");
+            Console.WriteLine("GitHub server Repository: https://github.com/nito9999/RebornRecDecomp");
+            Console.WriteLine("GitHub data Repository and Wiki: https://github.com/nito9999/rebornrecmod");
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("this is a decomp of RebornRec server" + Environment.NewLine);
 #endif
@@ -77,15 +75,8 @@ namespace RebornRec
             {
                 Console.WriteLine("This version of RebornRec is outdated. We recommend you install the latest version, RebornRec " + new WebClient().DownloadString($"{server_configs.github_url}/version.txt"));
             }
-                        Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.ForegroundColor = ConsoleColor.Yellow;
 
         }
     }
-    catch (Exception ex)
-    {
-        Console.WriteLine("CRASH:");
-        Console.WriteLine(ex.ToString());
-        Console.ReadKey();
-		   }
-}		   		   
 }
